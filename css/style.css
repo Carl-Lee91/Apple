@@ -1,0 +1,39 @@
+.profile{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title{
+    font-family: 'gulim';
+    font-size: 10vw;
+    color: red;
+    letter-spacing: 10px;
+    text-align: center;
+}
+.blue__bold{
+    color:blue;
+    font-weight: 600;
+    text-align: center;
+}
+#special {
+    text-align: center;
+    color: pink; 
+}
+.content{
+    color:red;
+    text-align: center;
+}
+.introduce{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px 1px;
+    font-size: 18px;    
+}
