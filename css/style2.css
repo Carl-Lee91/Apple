@@ -1,0 +1,54 @@
+.blog {
+    display: flex;
+    height: 220px;
+    width: 750px;
+    padding: 10px 5px;
+}
+
+.main{
+    margin-right: 20px;
+}
+
+.main,
+.main-title__name{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title{
+    display: flex;
+}
+
+.image-small {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0px 10px 5px 0px;
+}
+
+.main-title__name__name,
+.main-main-title__content{
+    font-size: 14px;
+}
+
+.main-title__name__time{
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+.main-main-title__title{
+    font-size: 16px;
+}
+
+.main-main-title__content{
+    opacity: 0.65;
+}
+
+.image-big {
+    height: 170px;
+    width: 170px;
+}
+
+.main-title__emo{
+    text-align: right;
+}
