@@ -8,24 +8,41 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="main">
-        <h4 class="main-title">Buy our shoes!</h4>
-        <p class="main-content">우리 신발은 가죽이에요</p>
-        <button class="main-button">
-            이동하기
+
+    <head>
+        <h1>Contact us</h1>        
+    </head>
+
+    <div class="main-email">
+        <span>Your Email</span>
+        <input type="email" placeholder="email@example.com" class="small input" required /> 
+    </div>
+
+    <div class="main-name">
+        <div class="main-name first">
+            <span>First name</span>
+            <input type="text" class="small input" required /> 
+        </div>
+        <div class="main-name last">
+            <span>Last name</span>
+            <input type="text" class="small input" required /> 
+        </div>
+    </div>
+
+    <div class="main-message">
+        <span>Message</span>
+        <input type="text" class="big input" required />            
+    </div>
+
+    <div class="footer">
+        <div>
+            <input type="checkbox" class="footer-cbox" id="sub" required />
+            <label for="sub">Subscribe</label>
+        </div>
+        <button type="submit" class="footer-btn">
+            <p>SEND</p>
         </button>
-        <div class="main-box">
-            <h3>How we design our shoes</h3>
-            <p>Who is the best pilot?<br>Is it hwasu shin<br>No i can't agree that</p>
-        </div>
+    </div>
 
-        <br>
-
-        <div class="main-box" style="padding: 50px">
-            <h3>How we design our shoes</h3>
-            <p>Who is the best pilot?<br>Is it hwasu shin<br>No i can't agree that</p>
-        </div>
-
-    </section>
 </body>
 </html>
