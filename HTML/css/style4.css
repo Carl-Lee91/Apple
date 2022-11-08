@@ -74,3 +74,38 @@ td {
     border-radius: 5px;
     background-color: #133761;
 }
+
+.input-test {
+    font-size: 20px;
+}
+
+.input-test:focus {
+    border: 5px solid tomato;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:link {
+    color:aqua;
+}
+
+.link:visited {
+    color:red;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;  
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
