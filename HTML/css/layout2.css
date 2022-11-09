@@ -1,0 +1,28 @@
+.flex-container {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    background-color: #FF7576;
+}
+
+.flex-item {    
+    margin:20px 40px;
+}
+
+.flex-item:nth-child(2) {
+    flex-grow: 1;
+}
+
+span {
+    color: white;    
+}
+
+.big {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.normal {
+    font-size: 40px;
+    margin: 0 10px;
+}
