@@ -26,3 +26,15 @@ span {
     font-size: 40px;
     margin: 0 10px;
 }
+
+.title {
+    font-size: 150px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 60px;
+    }
+}
+    
