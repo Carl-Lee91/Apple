@@ -8,3 +8,4 @@ function closePara() {
 }
 
 document.querySelector(".button-close").addEventListener('click', closePara);
+
