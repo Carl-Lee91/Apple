@@ -2,14 +2,14 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  let [글제목, changeTitle] = useState([
+  let [pTitle, changeTitle] = useState([
     "남자 코트 추천",
     "강남 우동 맛집",
     "파이썬 독학",
   ]); // 자주 변경될것 같은 html은 state로 만들기
   let [좋아요, plusThumbsup] = useState([0, 0, 0]); // state 이름, state 함수
   let [modal, setModal] = useState(false);
-
+  let [title, setTitle] = useState(0);
   /*   map함수
   기능 1. array에 들어있는 자료갯수만큼 그 안에 있는 코드를 반복실행해줍니다.
   기능 2. 콜백함수에 파라미터 아무렇게나 작명하면 그 파라미터는 어레이 안에 있던 모든 자료를 하나씩 출력해줍니다.
@@ -20,62 +20,16 @@ function App() {
       <div className="black-nav">
         <h4>"리액트 블로그"</h4>
       </div>
-      {/* <div className="list">
-        <button
-          onClick={() => {
-            let copy = [...글제목];
-            copy.sort();
-            changeTitle(copy);
-          }}
-        >
-          가나다순정렬
-        </button>
-        <h4>
-          {글제목[0]}{" "}
-          <button
-            onClick={() => {
-              let copy = [...글제목]; // state 함수는 기존 == 신규 일경우 동작하지 않는다. ...는 괄호를 벗겨주세요라는 문법 걍 눈속임
-              copy[0] = "여자 코트 추천";
-              changeTitle(copy);
-            }}
-          >
-            바꾸기
-          </button>
-          <span
-            onClick={() => {
-              plusThumbsup(좋아요 + 1);
-            }}
-          >
-            👍
-          </span>{" "}
-          {좋아요}
-        </h4>
-        <Title />
-      </div>
-      <div className="list">
-        <h4>{글제목[1]}</h4>
-        <Title />
-      </div>
-      <div className="list">
-        <h4
-          onClick={() => {
-            setModal(!modal);
-          }}
-        >
-          {글제목[2]}
-        </h4>
-        <Title />
-      </div> */}
-
-      {글제목.map((a, i) => {
+      {pTitle.map((a, i) => {
         return (
           <div className="list" key={i}>
             <h4
               onClick={() => {
-                setModal(!modal);
+                setModal((prev) => !prev);
+                setTitle(i);
               }}
             >
-              {글제목[i]}
+              {pTitle[i]}
               <span
                 onClick={() => {
                   let copy = 좋아요;
@@ -92,7 +46,9 @@ function App() {
         );
       })}
 
-      {modal == true ? <Modal /> : null}
+      {modal === true ? (
+        <Modal color={"skyblue"} title={title} modalTitle={pTitle} />
+      ) : null}
     </div>
   );
 }
@@ -101,15 +57,21 @@ const Title = () => {
   return <p>2월 17일 발행</p>;
 };
 
-function Modal() {
+function Modal(props) {
   return (
-    <div className="modal">
-      <h4>제목</h4>
+    <div className="modal" style={{ backgroundColor: props.color }}>
+      <h4>{props.modalTitle[props.title]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
+      <button>글수정</button>
     </div>
   );
 }
+
+/* props로 부모 -> 자식 state 전송하는 법 
+1. 자식컴포넌트 사용하는 곳에 가서 <자식컴포넌트 작명={state이름} /> 
+2. 자식컴포넌트 만드는 function으로 가서 props라는 파라미터 등록 후 props.작명 사용 */
+
 /* 켐포넌트를 이렇게 따로 함수로 빼서 사용가능함,
 1.반복적인 html은 이렇게 하면 좋음
 2. 큰 페이지들
